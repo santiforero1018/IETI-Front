@@ -1,8 +1,11 @@
 .Navbar {
+    color: red;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid red;
     display: flex;
     justify-content: flex-end;
 }
 
-button{
+button {
     margin-right: 30px;
 }

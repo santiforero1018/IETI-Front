@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import '../css/navbar.css'; 
+import styles from '../css/navbar.module.css'; 
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className={styles.Navbar}>
       <Link to="/profile">
         <button type="button">Profile</button>
       </Link>

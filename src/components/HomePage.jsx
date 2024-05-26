@@ -2,7 +2,7 @@ import React from 'react';
 import Nabvar from './Nabvar'
 import Sidebar from './Sidebar'
 import { Pie } from 'react-chartjs-2';
-import '../css/home.css';
+import styles from '../css/home.module.css';
 import Pagos from '../Pages/Pagos';
 import { Routes, Route } from 'react-router-dom';
 
@@ -23,14 +23,14 @@ const HomePage = () => {
     return (
         <div>
             <Nabvar />
-            <div className="flex">
+            <div className={styles.flex}>
                 <Sidebar />
-                <div className="content">
+                <div className={styles.content}>
                     <Routes>
                         <Route path="/" element={
                             <>
                                 <h1>Bienvenido a la página de inicio</h1>
-                                <div className="chart-container">
+                                <div className={styles.chartContainer}>
                                     <Pie data={data} options={opciones} />
                                 </div>
                             </>

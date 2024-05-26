@@ -1,0 +1,18 @@
+.Sidebar {
+    width: 14rem;
+    height: calc(100vh - 52px);
+    border-right: 1px solid red;
+}
+
+.Sidebar ul {
+    list-style: none;
+    padding: 1rem 2rem;
+}
+
+.Sidebar li {
+    margin-bottom: 1rem;
+}
+
+.Sidebar a {
+    text-decoration: none;
+}

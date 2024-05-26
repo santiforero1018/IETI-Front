@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-// import '../css/login.css';
+import { useNavigate } from 'react-router-dom';
+
+// import styles from '../css/login.module.css';
 
 
 
-const LoginForm = () => {
+const LoginForm = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -29,8 +32,8 @@ const LoginForm = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('accessToken', data.token); 
-        console.log("token: "+data.token);
-        console.log('Usuario autenticado');
+        setIsAuthenticated(true);
+        navigate('/home'); 
         
       } else {
         setError('Credenciales incorrectas');
