@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile {
+    border-radius: 60%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    height: 5em;
+    width: 7em;
+    padding: 12%;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+img{
+    margin-bottom: 10px;
+}

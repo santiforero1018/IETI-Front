@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// import '../css/login.css';
+
 
 
 const LoginForm = () => {
@@ -26,10 +28,10 @@ const LoginForm = () => {
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem('accessToken', data.token); // Guarda el token en el almacenamiento local
+        localStorage.setItem('accessToken', data.token); 
         console.log("token: "+data.token);
         console.log('Usuario autenticado');
-        // Aquí puedes redirigir al usuario a la página principal u otra página relevante
+        
       } else {
         setError('Credenciales incorrectas');
       }
@@ -42,19 +44,50 @@ const LoginForm = () => {
 
   return (
     <div>
-      <h2>Iniciar sesión</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Nombre de usuario:</label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <div id="logo">
+        <h1><i>SmartSpend</i></h1>
+      </div>
+      <section className="stark-login">
+        <form onSubmit={handleLogin}>
+          <div id="fade-box">
+            <input 
+              type="text" 
+              name="username" 
+              id="username" 
+              placeholder="Username" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required 
+            />
+            <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required 
+            />
+            <button type="submit">Log In</button>
+          </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </form>
+        <div className="hexagons">
+          
         </div>
-        <div>
-          <label>Contraseña:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </section>
+      <div id="circle1">
+        <div id="inner-cirlce1">
+          <h2></h2>
         </div>
-        <button type="submit">Iniciar sesión</button>
-      </form>
+      </div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 };
